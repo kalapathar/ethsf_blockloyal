@@ -4,8 +4,8 @@
       <v-flex xs12 sm6 offset-sm3>
         <v-card>
           <!--<v-img-->
-            <!--src="/static/tesla.jpg"-->
-            <!--aspect-ratio="2.75"-->
+          <!--src="/static/tesla.jpg"-->
+          <!--aspect-ratio="2.75"-->
           <!--&gt;</v-img>-->
 
           <v-card-title primary-title>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  import {getBuyer, getContractName, getContractSupply, getBalance, transfer} from './api'
+  import {getSell} from './api'
 
   export default {
     data () {
@@ -39,27 +39,12 @@
       refresh (err, data) {
         this.buyer = data
         console.log('refresh : ', data, ' err:', err)
-      },
-      printResult (err, data) {
-        console.log('res : ', data, ' err:', err)
       }
     },
 
     beforeRouteEnter (to, from, next) {
-      getBuyer(to.params.id).then((data) => {
+      getSell(to.params).then((data) => {
         next(vm => vm.refresh(null, data))
-      })
-      getContractName().then((data) => {
-        next(vm => vm.refreshName(null, data))
-      })
-      getContractSupply().then((data) => {
-        next(vm => vm.printResult(null, data))
-      })
-      getBalance().then((data) => {
-        next(vm => vm.printResult(null, data))
-      })
-      transfer().then((data) => {
-        next(vm => vm.printResult(null, data))
       })
     }
   }
