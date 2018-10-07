@@ -33,7 +33,7 @@ contract_interface = compiled_sol['<stdin>:Greeter']
 w3 = Web3(Web3.EthereumTesterProvider())
 
 # set pre-funded account as sender
-w3.eth.defaultAccount = w3.eth.accounts[0]
+w3.eth.defaultAccount = w3.eth.accounts[2]
 
 # Instantiate and deploy contract
 Greeter = w3.eth.contract(abi=contract_interface['abi'], bytecode=contract_interface['bin'])
