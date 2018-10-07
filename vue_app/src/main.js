@@ -6,6 +6,8 @@ import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
+//import Web3 from 'web3'
+
 Vue.use(Vuetify)
 
 Vue.config.productionTip = false
