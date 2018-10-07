@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Web3 from 'Web3'
 import contract from 'truffle-contract'
-import jsonInterface from '../../../flask_app/truffle/build/contracts/UnitedMileagePlusToken.json'
+import jsonInterface from '../../../truffle/build/contracts/UnitedMileagePlusToken.json'
 var loyalty = contract(jsonInterface)
 console.log('jsonI:', loyalty)
 window.me = function (c) {
